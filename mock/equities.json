@@ -1,0 +1,32 @@
+[
+  {
+    "name": "大疆科技有限公司",
+    "img": "static/dji.jpg",
+    "board": "新四板",
+    "intro": "私募、直销",
+    "capital": "2.1亿",
+    "isting_standard": "净利润不少于300万",
+    "listing_period": "2-3个月",
+    "domain": "https://www.qhee.com"
+  },
+  {
+    "name": "前海股权交易所",
+    "img": "static/blockchain.jpg",
+    "board": "新四板",
+    "intro": "私募、直销",
+    "capital": "2.1亿",
+    "isting_standard": "净利润不少于300万",
+    "listing_period": "2-3个月",
+    "domain": "https://www.qhee.com"
+  },
+  {
+    "name": "前海股权交易所",
+    "img": "static/blockchain.jpg",
+    "board": "新四板",
+    "intro": "私募、直销",
+    "capital": "2.1亿",
+    "isting_standard": "净利润不少于300万",
+    "listing_period": "2-3个月",
+    "domain": "https://www.qhee.com"
+  }
+]

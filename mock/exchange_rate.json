@@ -1,0 +1,32 @@
+{
+  "USDT": {
+    "marketcap": 22.930,
+    "exchange_name": "ShanWoo",
+    "exchange_code": "WOO",
+    "currency_name": "USDT",
+    "currency_code": "USDT",
+    "price": "200",
+    "price_percent": "+10.05%",
+    "high": "200.19",
+    "low": "199.16",
+    "24H": "583040",
+    "vol": "10.76",
+    "logo": "/img/cslogo/huobipro.png?v=1179",
+    "domain": "https://www.usdt.com"
+  },
+  "ETH": {
+    "marketcap": 22.930,
+    "exchange_name": "ShanWoo",
+    "exchange_code": "WOO",
+    "currency_name": "ETH",
+    "currency_code": "ETH",
+    "price": "200",
+    "price_percent": "+10.05%",
+    "high": "200.19",
+    "low": "199.16",
+    "24H": "583040",
+    "vol": "10.76",
+    "logo": "/img/cslogo/huobipro.png?v=1179",
+    "domain": "https://www.usdt.com"
+  }
+}
