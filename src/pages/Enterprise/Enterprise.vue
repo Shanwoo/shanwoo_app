@@ -1,10 +1,8 @@
 <template>
   <div>
     <head-component></head-component>
-    <div class="container">
-      <img :src='lastetsCoporators[0].pic'>
-    </div>
-    <div class="wrap">
+    <div class="container"><img :src='lastetsCoporators[0].pic'></div>
+    <div class="wrap news">
       <el-row :gutter="20">
         <el-col :span="5">
           <span>上链公司展播</span>
@@ -24,6 +22,7 @@
       </el-row>
     </div>
     <product-intro></product-intro>
+    <equity-list :equities="partners"></equity-list>
     <partner></partner>
     <foot-component></foot-component>
   </div>
@@ -33,12 +32,13 @@
 import { mapState, mapGetters } from 'vuex'
 import HeadComponent from '@/components/HeadComponent'
 import ProductIntro from '@/components/ProductIntro'
+import EquityList from './EquityList'
 import Partner from '@/components/Partner'
 import FootComponent from '@/components/FootComponent'
 
 export default {
   name: 'Enterprise',
-  components: { HeadComponent, ProductIntro, Partner, FootComponent },
+  components: { HeadComponent, ProductIntro, EquityList, Partner, FootComponent },
   computed: {
     ...mapGetters(['lastetsCoporators']),
     ...mapState({
@@ -55,7 +55,7 @@ export default {
   background: #1a160d;
   text-align: center;
 }
-.wrap {
+.news {
   padding-top: 20px;
   padding-bottom: 20px;
   border-bottom: 1px solid #c0c4cc;

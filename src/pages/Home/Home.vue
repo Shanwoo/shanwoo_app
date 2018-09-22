@@ -1,14 +1,12 @@
 <template>
   <div>
     <head-component></head-component>
-    <div class="container">
-      <swiper></swiper>
-      <product-intro-1></product-intro-1>
-      <coporation :coporators="lastetsCoporators"></coporation>
-      <transaction :exchangeRate="exchangeRate" :transactions="transactions"></transaction>
-      <partner></partner>
-      <!-- <h1>{{ $t('home') }}</h1> -->
-    </div>
+    <swiper></swiper>
+    <product-intro-1></product-intro-1>
+    <coporation :coporators="lastetsCoporators"></coporation>
+    <transaction-list :exchangeRate="exchangeRate" :transactions="transactions"></transaction-list>
+    <partner></partner>
+    <!-- <h1>{{ $t('home') }}</h1> -->
     <foot-component></foot-component>
   </div>
 </template>
@@ -19,13 +17,13 @@ import HeadComponent from '@/components/HeadComponent'
 import Swiper from './Swiper'
 import ProductIntro1 from './ProductIntro1'
 import Coporation from './Coporation'
-import Transaction from './Transaction'
+import TransactionList from './TransactionList'
 import Partner from '@/components/Partner'
 import FootComponent from '@/components/FootComponent'
 
 export default {
   name: 'Home',
-  components: { HeadComponent, Swiper, ProductIntro1, Coporation, Transaction, Partner, FootComponent },
+  components: { HeadComponent, Swiper, ProductIntro1, Coporation, TransactionList, Partner, FootComponent },
   data () {
     return {
     }

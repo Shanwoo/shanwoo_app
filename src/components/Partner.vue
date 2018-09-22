@@ -26,7 +26,7 @@ export default {
 <style scoped>
 .wrap {
   background: #fff;
-  border-top: 1px solid #c0c4cc;
+  /* border-top: 1px solid #c0c4cc; */
 }
 h2 {
   margin-bottom: 30px;
