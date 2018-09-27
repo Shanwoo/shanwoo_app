@@ -6,12 +6,13 @@
 
 <script>
 export default {
-  name: 'App',
-  created () {
-    this.$store.dispatch('getPartners')
-    this.$store.dispatch('getExchangeRate')
-    this.$store.dispatch('getTransactions')
-  }
+  name: 'App'
+  //   created () {
+  //     this.$store.dispatch('getPartners')
+  //     this.$store.dispatch('getMarkets')
+  //     this.$store.dispatch('getExchangeRate')
+  //     this.$store.dispatch('getTransactions')
+  //   }
 }
 </script>
 
@@ -46,21 +47,6 @@ li {
   padding: 60px;
   width: 100%;
 }
-/* .header {
-  background: #fff;
-  border-bottom: solid 2px #eee;
-  margin-bottom: 20px;
-} */
-/* .container {
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-} */
-/* .content {
-  padding: 20px;
-  background: #efefef;
-} */
 @media (min-width: 1200px) {
   .wrap {
     padding: 70px 120px;

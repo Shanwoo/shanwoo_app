@@ -2,9 +2,11 @@
   <div class="wrap">
     <div class="title">
       <h2>最新股权公示</h2>
-      <span>已有{{amount}}人购买<el-button size="small">去购买</el-button></span>
+      <span>已有{{amount}}人购买<el-button size="small">
+        <router-link :to="{name:'Transaction'}">去购买</router-link>
+      </el-button></span>
     </div>
-    <el-row :gutter="10" v-for="(item, index) in equities" :key="index">
+    <el-row :gutter="10" v-for="(item, index) in equityList" :key="index">
       <el-col :span="6">
         <span><img :src="item.pic"></span>
       </el-col>
@@ -27,6 +29,11 @@
         <p>哈希: {{ item.hash }}</p>
       </el-col>
     </el-row>
+    <div class="getmore" v-if="show">
+      <el-button type="text" @click="getMore">
+        更多<i class="el-icon-caret-bottom"></i>
+      </el-button>
+    </div>
   </div>
 </template>
 
@@ -36,7 +43,22 @@ export default {
   props: ['equities'],
   data () {
     return {
-      amount: 20000
+      amount: 20000,
+      showNum: 4,
+      equityList: [],
+      show: true
+    }
+  },
+  created () {
+    this.equityList = this.equities.slice(0, this.showNum)
+  },
+  methods: {
+    getMore () {
+      this.showNum += this.showNum
+      this.equityList = this.equities.slice(0, this.showNum)
+      if (this.equityList.length === this.equities.length) {
+        this.show = false
+      }
     }
   }
 }
@@ -51,7 +73,7 @@ export default {
   display: table;
   display: table;
   padding: 20px 5px;
-  border-bottom: 1px solid #929292;
+  border-bottom: 1px solid #aaa;
 }
 .title h2 {
   display: table-cell;
@@ -65,10 +87,18 @@ export default {
   margin-left: 20px;
 }
 .el-row {
-  border-bottom: 1px solid #929292;
+  border-bottom: 1px solid #aaa;
   padding: 10px 0;
 }
 .el-col img {
   width: 100%;
+}
+a {
+  color: #343434;
+}
+.getmore {
+  margin-top: 10px;
+  /* border-bottom: 1px solid #aaa; */
+  text-align: center;
 }
 </style>

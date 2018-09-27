@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/pages/Home'
 import Enterprise from '@/pages/Enterprise'
+import Transaction from '@/pages/Transaction'
 import Market from '@/pages/Market'
 import About from '@/pages/About'
 
@@ -18,6 +19,11 @@ export default new Router({
       path: '/enterprise',
       name: 'Enterprise',
       component: Enterprise
+    },
+    {
+      path: '/transaction',
+      name: 'Transaction',
+      component: Transaction
     },
     {
       path: '/market',

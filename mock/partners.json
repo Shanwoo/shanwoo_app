@@ -50,5 +50,57 @@
     "hash": "sh7289",
     "block": "6829379",
     "domain": "https://www.dji.com/cn"
+  },
+  {
+    "pid": "0",
+    "name": "大疆无人机科技1",
+    "pic": "static/dji.jpg",
+    "slogan": "the future of possible",
+    "intro": "无人机领军企业",
+    "capital": "2000000",
+    "shares": "100000",
+    "ratio": "20%",
+    "hash": "sh7289",
+    "block": "6829379",
+    "domain": "https://www.dji.com/cn"
+  },
+  {
+    "pid": "1",
+    "name": "大疆无人机科技2",
+    "pic": "static/dji.jpg",
+    "slogan": "the future of possible",
+    "intro": "无人机领军企业",
+    "capital": "2000000",
+    "shares": "100000",
+    "ratio": "20%",
+    "hash": "sh7289",
+    "block": "6829379",
+    "domain": "https://www.dji.com/cn"
+  },
+  {
+    "pid": "2",
+    "name": "大疆无人机科技3",
+    "pic": "static/dji.jpg",
+    "slogan": "the future of possible",
+    "intro": "无人机领军企业",
+    "capital": "2000000",
+    "shares": "100000",
+    "ratio": "20%",
+    "hash": "sh7289",
+    "block": "6829379",
+    "domain": "https://www.dji.com/cn"
+  },
+  {
+    "pid": "2",
+    "name": "大疆无人机科技4",
+    "pic": "static/dji.jpg",
+    "slogan": "the future of possible",
+    "intro": "无人机领军企业",
+    "capital": "2000000",
+    "shares": "100000",
+    "ratio": "20%",
+    "hash": "sh7289",
+    "block": "6829379",
+    "domain": "https://www.dji.com/cn"
   }
 ]

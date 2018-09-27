@@ -6,6 +6,11 @@ let actions = {
       commit('addParters', res.data)
     })
   },
+  getMarkets ({ commit }, payload) {
+    axios.get('/api/markets').then(res => {
+      commit('addMarkets', res.data)
+    })
+  },
   getExchangeRate ({ commit }, payload) {
     axios.get('/api/exchange_rate').then(res => {
       commit('addExchangeRate', res.data)

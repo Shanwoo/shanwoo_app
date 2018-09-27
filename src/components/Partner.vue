@@ -39,7 +39,7 @@ h2 {
   width: 23%;
   float: left;
   margin: 5px;
-  border: 1px solid #929292;
+  /* border: 1px solid #929292; */
 }
 img {
   width: auto;

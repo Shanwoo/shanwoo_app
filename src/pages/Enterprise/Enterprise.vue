@@ -55,16 +55,16 @@ export default {
   background: #1a160d;
   text-align: center;
 }
-.news {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #c0c4cc;
-}
 img {
   width: auto;
   height: auto;
   max-width: 100%;
   max-height: 90%;
   vertical-align: middle;
+}
+.news {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #c0c4cc;
 }
 </style>
