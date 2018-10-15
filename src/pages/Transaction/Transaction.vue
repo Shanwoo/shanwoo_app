@@ -2,6 +2,18 @@
   <div>
     <head-component></head-component>
     <div class="container"><img :src='lastetsCoporators[0].pic'></div>
+    <div class="wrap">
+        <div>
+          <input type="text" v-model="accountAddress"/>
+          <button @click="scanAddress">scan ETH Address</button>
+          <p></p>
+        </div>
+        <div>
+          <input type="text" v-model="txAddress"/>
+          <button @click="scanTx">scan Transaction</button>
+          <p></p>
+        </div>
+      </div>
     <partner></partner>
     <foot-component></foot-component>
   </div>
@@ -15,12 +27,22 @@ import FootComponent from '@/components/FootComponent'
 
 export default {
   name: 'Transaction',
+  data () {
+    return {
+      accountAddress: '',
+      txAddress: ''
+    }
+  },
   components: { HeadComponent, Partner, FootComponent },
   computed: {
     ...mapGetters(['lastetsCoporators']),
     ...mapState({
       transactions: state => state.transactions
     })
+  },
+  methods: {
+    scanAddress () { },
+    scanTx () { }
   }
 }
 </script>
