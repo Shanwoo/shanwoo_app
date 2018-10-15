@@ -3,17 +3,22 @@
     <head-component></head-component>
     <div class="container"><img :src='lastetsCoporators[0].pic'></div>
     <div class="wrap">
-        <div>
-          <input type="text" v-model="accountAddress"/>
-          <button @click="scanAddress">scan ETH Address</button>
-          <p></p>
-        </div>
-        <div>
-          <input type="text" v-model="txAddress"/>
-          <button @click="scanTx">scan Transaction</button>
-          <p></p>
-        </div>
+      <h2>账户查询</h2>
+      <div>
+        <input type="text" v-model="accountAddress"/>
+        <button @click="scanAddress">查询账户余额</button>
+        <p></p>
       </div>
+      <a :href='"https://etherscan.io/address/" + accountAddress' target="_blank">
+        >>更多账户详情
+      </a>
+      <h2>交易查询</h2>
+      <div>
+        <input type="text" v-model="txAddress"/>
+        <button @click="scanTx">查询交易信息</button>
+        <p></p>
+      </div>
+    </div>
     <partner></partner>
     <foot-component></foot-component>
   </div>

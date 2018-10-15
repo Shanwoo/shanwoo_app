@@ -1,3 +1,5 @@
+import pollWeb3 from '@/util/pollWeb3'
+
 let mutations = {
   addParters (state, payload) {
     state.partners = payload
