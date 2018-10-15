@@ -6,13 +6,13 @@
 
 <script>
 export default {
-  name: 'App'
-  //   created () {
-  //     this.$store.dispatch('getPartners')
-  //     this.$store.dispatch('getMarkets')
-  //     this.$store.dispatch('getExchangeRate')
-  //     this.$store.dispatch('getTransactions')
-  //   }
+  name: 'App',
+  created () {
+    this.$store.dispatch('getPartners')
+    this.$store.dispatch('getMarkets')
+    this.$store.dispatch('getExchangeRate')
+    this.$store.dispatch('getTransactions')
+  }
 }
 </script>
 

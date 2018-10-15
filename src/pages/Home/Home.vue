@@ -6,7 +6,6 @@
     <coporation :coporators="lastetsCoporators"></coporation>
     <transaction-list :exchangeRate="exchangeRate" :transactions="transactions"></transaction-list>
     <partner></partner>
-    <!-- <h1>{{ $t('home') }}</h1> -->
     <foot-component></foot-component>
   </div>
 </template>

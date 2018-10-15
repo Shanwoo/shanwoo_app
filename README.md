@@ -1,5 +1,15 @@
 # shanwoo_app
 
+- 前端框架使用 Vue 2.0
+- css框架使用 pure css
+- 使用vue-router进行前端路由管理
+- 使用vuex进行状态管理
+- 使用mock进行本地数据模拟管理
+- 使用axios进行前后端数据请求
+- 使用vue-i18n实现前端页面多语言切换
+- 部分组件使用element-ui快速搭建
+- 使用Font Awesome提供部分网页字体图标库
+
 > A Vue.js project
 
 ## Build Setup
