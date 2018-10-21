@@ -7,7 +7,7 @@
       <div>
         <input type="text" v-model="accountAddress"/>
         <button @click="scanAddress">查询账户余额</button>
-        <p></p>
+        <p>{{balance}}</p>
       </div>
       <a :href='"https://etherscan.io/address/" + accountAddress' target="_blank">
         >>更多账户详情
@@ -16,7 +16,7 @@
       <div>
         <input type="text" v-model="txAddress"/>
         <button @click="scanTx">查询交易信息</button>
-        <p></p>
+        <p>{{balance}}</p>
       </div>
     </div>
     <partner></partner>
@@ -35,6 +35,7 @@ export default {
   data () {
     return {
       accountAddress: '',
+      balance: '',
       txAddress: ''
     }
   },
@@ -42,12 +43,32 @@ export default {
   computed: {
     ...mapGetters(['lastetsCoporators']),
     ...mapState({
-      transactions: state => state.transactions
+      transactions: state => state.transactions,
+      contractInstance: state => state.contractInstance
     })
   },
   methods: {
-    scanAddress () { },
-    scanTx () { }
+    scanAddress () { 
+      console.log(this.accountAddress)
+      this.$store.state.contractInstance().balanceOf(this.accountAddress,(err, balance) => {
+        if (err) {
+          // If we can't find a networkId keep result the same and reject the promise
+          reject(new Error('Unable to retrieve network ID'))
+        } else {
+          this.balance = balance.toNumber()/1e+18
+          console.log(balance.toNumber()/1e+18)
+        }
+      })
+    },
+    scanTx () { },
+  },
+  beforeCreate () {
+    console.log('registerWeb3 Action dispatched from casino-dapp.vue')
+    this.$store.dispatch('registerWeb3')
+  },
+  mounted () {
+    console.log('dispatching getContractInstance')
+    this.$store.dispatch('getContractInstance')
   }
 }
 </script>
