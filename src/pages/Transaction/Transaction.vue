@@ -36,7 +36,16 @@ export default {
     return {
       accountAddress: '',
       balance: '',
-      txAddress: ''
+      txAddress: '',
+      // 转账金额
+      transAmount:'',
+      depositTo:'',
+      depositNums:'',
+      requireTokens:'',
+      proofHash:'',
+      proofFileUrl:'',
+      exchangeId:'',
+      depositInformation:''
     }
   },
   components: { HeadComponent, Partner, FootComponent },
@@ -48,7 +57,7 @@ export default {
     })
   },
   methods: {
-    scanAddress () { 
+    scanAddress(){ 
       console.log(this.accountAddress)
       this.$store.state.contractInstance().balanceOf(this.accountAddress,(err, balance) => {
         if (err) {
@@ -57,6 +66,49 @@ export default {
         } else {
           this.balance = balance.toNumber()/1e+18
           console.log(balance.toNumber()/1e+18)
+        }
+      })
+    },
+    transfer(){
+      this.$store.state.contractInstance().transfer(this.transAmount, {
+        from: this.$store.state.web3.coinbase
+      }, (err, result) => {
+        if (err) {
+          console.log(err)
+        } else {
+          console.log(result)
+        }
+      })
+    },
+    depositShare(){
+      this.$store.contractInstance().depositShare(this.depositTo,this.depositNums,this.requireTokens,this.proofHash,this.proofFileUrl
+      ,{from:this.$store.state.web3.coinbase},(err, result) => {
+        if (err) {
+          console.log(err)
+        } else {
+          console.log(result)
+        }
+      })
+    },
+    purchaseShare(){
+      this.$store.contractInstance().purchaseShare(this.exchangeId,
+      {from: this.$store.state.web3.coinbase},
+      (err, result) => {
+        if (err) {
+          console.log(err)
+        } else {
+          console.log(result)
+        }
+      })
+    },
+    depositInfo(){
+      this.$store.contractInstance().depositTo(this.exchangeId,
+      {from: this.$store.state.web3.coinbase},
+      (err, result) => {
+        if (err) {
+          console.log(err)
+        } else {
+          this.depositInformation = result
         }
       })
     },
