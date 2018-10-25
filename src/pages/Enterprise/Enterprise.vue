@@ -23,6 +23,15 @@
     </div>
     <product-intro></product-intro>
     <equity-list :equities="partners"></equity-list>
+    <div class="wrap">
+      <h2>查询股权哈希</h2>
+      <div>
+        <!-- 输入内容是什么 -->
+        <el-input class="input" type="text" v-model="equityHash" placeholder="请输入..."></el-input>
+        <el-button size="small">查询</el-button>
+        <p></p>
+      </div>
+    </div>
     <partner></partner>
     <foot-component></foot-component>
   </div>
@@ -39,6 +48,11 @@ import FootComponent from '@/components/FootComponent'
 export default {
   name: 'Enterprise',
   components: { HeadComponent, ProductIntro, EquityList, Partner, FootComponent },
+  data () {
+    return {
+      equityHash: ''
+    }
+  },
   computed: {
     ...mapGetters(['lastetsCoporators']),
     ...mapState({
@@ -66,5 +80,8 @@ img {
   padding-top: 20px;
   padding-bottom: 20px;
   border-bottom: 1px solid #c0c4cc;
+}
+.input {
+  width: 50%;
 }
 </style>

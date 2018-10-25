@@ -17,39 +17,41 @@
         <span>24H: {{exchangeRate["USDT"]["24H"]}}</span>
       </el-col>
     </el-row>
-    <el-table :data="transactions" stripe style="width: 100%">
-      <el-table-column label="时间" min-width="100px">
-        <template slot-scope="scope">
-          <span>{{ scope.row.datetime }}</span>
-        </template>
-      </el-table-column>
-      <el-table-column label="交易地址" min-width="100px">
-        <template slot-scope="scope">
-          <span><a :href='"https://etherscan.io/tx/" + scope.row.txhash' target="_blank">
-            {{ scope.row.txhash }}
-          </a></span>
-        </template>
-      </el-table-column>
-      <el-table-column label="购买方" min-width="100px">
-        <template slot-scope="scope">
-          <span><a :href='"https://etherscan.io/address/" + scope.row.from' target="_blank">
-            {{ scope.row.from }}
-          </a></span>
-        </template>
-      </el-table-column>
-      <el-table-column label="售卖方" min-width="100px">
-        <template slot-scope="scope">
-          <span><a :href='"https://etherscan.io/address/" + scope.row.to' target="_blank">
-            {{ scope.row.to }}
-          </a></span>
-        </template>
-      </el-table-column>
-      <el-table-column label="交易金额" min-width="100px">
-        <template slot-scope="scope">
-          <span>{{ scope.row.value }}</span>
-        </template>
-      </el-table-column>
-    </el-table>
+    <div class="table-responsive">
+      <table class="table table-hover table-striped">
+        <!-- <caption>响应式表格布局</caption> -->
+        <thead>
+          <tr>
+            <th>时间</th>
+            <th>交易地址</th>
+            <th>购买方</th>
+            <th>售卖方</th>
+            <th>交易金额</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(item, index) in transactions" :key="index">
+            <td class="datetime-tag">{{ item.datetime }}</td>
+            <td><span class="address-tag">
+              <a :href='"https://etherscan.io/tx/" + item.txhash' target="_blank">
+                {{ item.txhash }}
+              </a>
+            </span></td>
+            <td><span class="address-tag">
+              <a :href='"https://etherscan.io/address/" + item.from' target="_blank">
+                {{ item.from }}
+              </a>
+            </span></td>
+            <td><span class="address-tag">
+              <a :href='"https://etherscan.io/address/" + item.to' target="_blank">
+                {{ item.to }}
+              </a>
+            </span></td>
+            <td>{{ item.value }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </template>
 
@@ -61,16 +63,29 @@ export default {
 </script>
 
 <style scoped>
+@media screen and (max-width: 767px) {
+  .table-responsive > .table > tbody > tr > td {
+    white-space: nowrap;
+  }
+}
+.table-responsive > .table > tbody > tr > td {
+  font-size: 14px;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+.datetime-tag {
+  width: 150px;
+}
+.address-tag {
+  width: 125px;
+  display: inline-block;
+  vertical-align: bottom;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
 .el-row {
   margin-bottom: 20px;
   font-size: 17px;
   line-height: 45px;
-}
-.el-table {
-  color: #333;
-  border-top: 2px solid #d3d3d3;
-}
-.el-table thead {
-  color: #333 !important;
 }
 </style>

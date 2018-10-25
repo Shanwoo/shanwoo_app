@@ -37,6 +37,7 @@ export default {
   font-size: 45px;
   height: 50px;
   width: 50px;
+  top: 0;
 }
 .el-carousel__item img {
   width: auto;

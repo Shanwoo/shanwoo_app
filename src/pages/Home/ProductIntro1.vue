@@ -2,15 +2,16 @@
   <div class="wrap">
     <h2>产品简介</h2>
     <el-row :gutter="20">
-      <el-col :span="8">
+       <!-- :span="8" -->
+      <el-col :xs="12" :span="8">
         <div class="advantage"><img src="static/bitcoin.png"/></div>
         <div class="discribe"><p>快速融资</p></div>
       </el-col>
-      <el-col :span="8">
+      <el-col :xs="12" :span="8">
         <div class="advantage"><img src="static/bitcoin.png"/></div>
         <div class="discribe"><p>快速融资</p></div>
       </el-col>
-      <el-col :span="8">
+      <el-col :xs="12" :span="8">
         <div class="advantage"><img src="static/bitcoin.png"/></div>
         <div class="discribe"><p>快速融资</p></div>
       </el-col>

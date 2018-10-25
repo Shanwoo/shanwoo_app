@@ -5,18 +5,19 @@
     <div class="wrap">
       <h2>账户查询</h2>
       <div>
-        <input type="text" v-model="accountAddress"/>
-        <button @click="scanAddress">查询账户余额</button>
-        <p></p>
+        <el-input class="input" type="text" v-model="accountAddress" placeholder="请输入账户地址"></el-input>
+        <el-button size="small" @click="scanAddress">查询账户余额</el-button>
+        <p v-if="showAccount">
+          <a :href='"https://etherscan.io/address/" + accountAddress' target="_blank">
+            >>更多账户详情
+          </a>
+        </p>
       </div>
-      <a :href='"https://etherscan.io/address/" + accountAddress' target="_blank">
-        >>更多账户详情
-      </a>
       <h2>交易查询</h2>
       <div>
-        <input type="text" v-model="txAddress"/>
-        <button @click="scanTx">查询交易信息</button>
-        <p></p>
+        <el-input class="input" type="text" v-model="txAddress" placeholder="请输入交易地址"></el-input>
+        <el-button size="small" @click="scanTx">查询交易信息</el-button>
+        <p v-if="showTx"></p>
       </div>
     </div>
     <partner></partner>
@@ -35,7 +36,9 @@ export default {
   data () {
     return {
       accountAddress: '',
-      txAddress: ''
+      showAccount: false,
+      txAddress: '',
+      showTx: false
     }
   },
   components: { HeadComponent, Partner, FootComponent },
@@ -46,8 +49,12 @@ export default {
     })
   },
   methods: {
-    scanAddress () { },
-    scanTx () { }
+    scanAddress () {
+      this.showAccount = true
+    },
+    scanTx () {
+      this.showTx = true
+    }
   }
 }
 </script>
@@ -65,5 +72,8 @@ img {
   max-width: 100%;
   max-height: 90%;
   vertical-align: middle;
+}
+.input {
+  width: 50%;
 }
 </style>

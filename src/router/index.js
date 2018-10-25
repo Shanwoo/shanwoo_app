@@ -24,7 +24,8 @@ export default new Router({
     {
       path: '/transaction',
       name: 'Transaction',
-      component: Transaction
+      component: Transaction,
+      meta: { scrollToTop: true }
     },
     {
       path: '/market',
@@ -42,7 +43,14 @@ export default new Router({
     }
   ],
   scrollBehavior (to, from, savedPosition) {
-    return { x: 0, y: 0 }
+    const position = {}
+    if (to.matched.some(m => m.meta.scrollToTop)) {
+      // cords will be used if no selector is provided,
+      // or if the selector didn't match any element.
+      position.x = 0
+      position.y = 0
+    }
+    return position
     // if (savedPosition) {
     //   // savedPosition is only available for popstate navigations.
     //   return savedPosition

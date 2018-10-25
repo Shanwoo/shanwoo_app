@@ -36,7 +36,6 @@ li {
     "Microsoft YaHei", "微软雅黑", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  min-width: 900px;
   /* text-align: center;
   color: #2c3e50;
   margin-top: 60px; */
@@ -44,12 +43,27 @@ li {
 .wrap {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  padding: 60px;
+  padding: 30px 15px;
+  margin-right: auto;
+  margin-left: auto;
   width: 100%;
 }
-@media (min-width: 1200px) {
+@media screen and (min-width: 768px) {
+  .wrap {
+    padding: 30px;
+    width: 750px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .wrap {
+    padding: 60px;
+    width: 970px;
+  }
+}
+@media screen and (min-width: 1200px) {
   .wrap {
     padding: 70px 120px;
+    width: 1170px;
   }
 }
 /* @media (min-width: 992px) {

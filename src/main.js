@@ -9,6 +9,9 @@ import i18n from './lang'
 // import { Menu, Submenu, MenuItem, Container, Aside, Main, Carousel, CarouselItem, Button, Select } from 'element-ui'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+import 'jquery/dist/jquery.min.js'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/js/bootstrap.min.js'
 axios.defaults.baseURL = process.env.BASE_URL
 Vue.use(ElementUI)
 // Vue.use(Menu)
