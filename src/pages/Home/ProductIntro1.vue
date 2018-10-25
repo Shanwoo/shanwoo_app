@@ -1,21 +1,20 @@
 <template>
   <div class="wrap">
     <h2>产品简介</h2>
-    <el-row :gutter="20">
-       <!-- :span="8" -->
-      <el-col :xs="12" :span="8">
+    <div class="row">
+      <div class="col-md">
         <div class="advantage"><img src="static/bitcoin.png"/></div>
         <div class="discribe"><p>快速融资</p></div>
-      </el-col>
-      <el-col :xs="12" :span="8">
+      </div>
+      <div class="col-md">
         <div class="advantage"><img src="static/bitcoin.png"/></div>
         <div class="discribe"><p>快速融资</p></div>
-      </el-col>
-      <el-col :xs="12" :span="8">
+      </div>
+      <div class="col-md">
         <div class="advantage"><img src="static/bitcoin.png"/></div>
         <div class="discribe"><p>快速融资</p></div>
-      </el-col>
-    </el-row>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -29,16 +28,10 @@ export default {
 h2 {
   margin-bottom: 30px;
 }
-.el-row {
-  padding-left: 20px;
-  display: table;
-  width: 100%;
-  height: 100%;
-}
-.el-col {
-  display: table-cell;
-  vertical-align: middle;
-  height: 100%;
+.col-md {
+  width: 220px;
+  margin: auto;
+  padding-right: 15px;
 }
 .advantage {
   width: 100px;
@@ -48,7 +41,7 @@ h2 {
   vertical-align: middle;
 }
 .discribe {
-  width: calc(100% - 120px);
+  /* width: calc(100% - 120px); */
   padding-left: 20px;
   display: table-cell;
   vertical-align: middle;

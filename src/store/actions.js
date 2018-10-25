@@ -23,7 +23,7 @@ let actions = {
       commit('addTransactions', res.data)
     })
   },
-  registerWeb3 ({ commit }) {
+  registerWeb3 ({commit}) {
     console.log('registerWeb3 Action being executed')
     getWeb3.then(result => {
       console.log('committing result to registerWeb3Instance mutation')
@@ -32,11 +32,11 @@ let actions = {
       console.log('error in action registerWeb3', e)
     })
   },
-  pollWeb3 ({ commit }, payload) {
+  pollWeb3 ({commit}, payload) {
     console.log('pollWeb3 action being executed')
     commit('pollWeb3Instance', payload)
   },
-  getContractInstance ({ commit }) {
+  getContractInstance ({commit}) {
     getContract.then(result => {
       commit('registerContractInstance', result)
     }).catch(e => console.log(e))

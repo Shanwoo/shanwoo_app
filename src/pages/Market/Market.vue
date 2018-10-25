@@ -1,7 +1,7 @@
 <template>
   <div>
     <head-component></head-component>
-    <div class="container"><img :src='lastetsCoporators[0].pic'></div>
+    <div class="banner"><img :src='lastetsCoporators[0].pic'></div>
     <market-list :markets="markets"></market-list>
     <partner></partner>
     <foot-component></foot-component>
@@ -28,12 +28,6 @@ export default {
 </script>
 
 <style scoped>
-.container {
-  height: 200px;
-  line-height: 200px;
-  background: #1a160d;
-  text-align: center;
-}
 img {
   width: auto;
   height: auto;

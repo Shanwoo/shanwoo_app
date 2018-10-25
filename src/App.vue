@@ -36,21 +36,29 @@ li {
     "Microsoft YaHei", "微软雅黑", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* text-align: center;
-  color: #2c3e50;
-  margin-top: 60px; */
 }
 .wrap {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  padding: 30px 15px;
+  padding: 20px 15px;
   margin-right: auto;
   margin-left: auto;
   width: 100%;
 }
-@media screen and (min-width: 768px) {
+.banner {
+  height: 200px;
+  line-height: 200px;
+  background: #1a160d;
+  text-align: center;
+}
+@media screen and (min-width: 576px) {
   .wrap {
     padding: 30px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .wrap {
+    padding: 45px;
     width: 750px;
   }
 }
@@ -66,9 +74,4 @@ li {
     width: 1170px;
   }
 }
-/* @media (min-width: 992px) {
-  .container {
-    width: 970px;
-  }
-} */
 </style>

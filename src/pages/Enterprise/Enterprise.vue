@@ -1,7 +1,7 @@
 <template>
   <div>
     <head-component></head-component>
-    <div class="container"><img :src='lastetsCoporators[0].pic'></div>
+    <div class="banner"><img :src='lastetsCoporators[0].pic'></div>
     <div class="wrap news">
       <el-row :gutter="20">
         <el-col :span="5">
@@ -63,12 +63,6 @@ export default {
 </script>
 
 <style scoped>
-.container {
-  height: 200px;
-  line-height: 200px;
-  background: #1a160d;
-  text-align: center;
-}
 img {
   width: auto;
   height: auto;
