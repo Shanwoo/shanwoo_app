@@ -1,22 +1,19 @@
 <template>
   <div class="wrap">
-    <el-row :gutter="20">
-      <el-col :span="6">
+    <div class="row">
+      <div class="col-auto">
         <span>WOO/USDT ≈ {{exchangeRate["USDT"]["price"]}}</span>
-      </el-col>
-      <el-col :span="3">
+      </div>
+      <div class="col-auto">
         <span>{{exchangeRate["USDT"]["price_percent"]}}</span>
-      </el-col>
-      <el-col :span="5">
+      </div>
+      <div class="col-auto">
         <span>high: {{exchangeRate["USDT"].high}}</span>
-      </el-col>
-      <el-col :span="5">
+      </div>
+      <div class="col-auto">
         <span>low: {{exchangeRate["USDT"].low}}</span>
-     </el-col>
-      <el-col :span="5">
-        <span>24H: {{exchangeRate["USDT"]["24H"]}}</span>
-      </el-col>
-    </el-row>
+      </div>
+    </div>
     <div class="table-responsive">
       <table class="table table-hover table-striped">
         <!-- <caption>响应式表格布局</caption> -->
@@ -63,10 +60,13 @@ export default {
 </script>
 
 <style scoped>
-@media screen and (max-width: 767px) {
-  .table-responsive > .table > tbody > tr > td {
-    white-space: nowrap;
-  }
+.row {
+  margin-bottom: 10px;
+  margin-left: 5px;
+}
+.col-auto {
+  width: auto;
+  padding-bottom: 10px;
 }
 .table-responsive > .table > tbody > tr > td {
   font-size: 14px;
@@ -83,9 +83,9 @@ export default {
   text-overflow: ellipsis;
   overflow: hidden;
 }
-.el-row {
-  margin-bottom: 20px;
-  font-size: 17px;
-  line-height: 45px;
+@media screen and (max-width: 767px) {
+  .table-responsive > .table > tbody > tr > td {
+    white-space: nowrap;
+  }
 }
 </style>

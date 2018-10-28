@@ -35,34 +35,6 @@
         </div>
       </nav>
     </div>
-    <!-- <nav class="navbar navbar-expand-md navbar-defaul" role="navigation">
-      <div class="content">
-        <div class="navbar-header">
-            <router-link :to="{ name:'Home' }" class="navbar-brand nav-title">
-              <img class="logo" src="static/logo.png"/>
-            </router-link>
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
-                <i class="fa fa-bars fa-lg"></i>
-            </button>
-        </div>
-        <div id="menu" class="collapse navbar-collapse navbar-right is-collapse">
-          <ul class="nav navbar-nav">
-                <li class="cative"><router-link :to="{ name:'Home' }">{{ $t('home') }}</router-link></li>
-                <li class="cative"><router-link :to="{ name:'Enterprise' }">{{ $t('enterprise') }}</router-link></li>
-                <li class="cative"><router-link :to="{ name:'Market' }">{{ $t('market') }}</router-link></li>
-                <li class="cative"><router-link :to="{ name:'About' }">{{ $t('about') }}</router-link></li>
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  {{ language }}<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li @click="handleCommand('zh')">简体中文</li>
-                        <li @click="handleCommand('en')">English</li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-      </div>
-    </nav> -->
   </div>
 </template>
 

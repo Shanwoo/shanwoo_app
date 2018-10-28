@@ -1,16 +1,18 @@
 <template>
   <div class="wrap">
     <h2>最新合作企业</h2>
-    <el-row :gutter="20">
-      <el-col :span="8" v-for="(item, index) in coporators" :key="index">
-        <el-card :body-style="{ padding: '0px' }">
-          <img :src="item.pic">
-          <div class="name">
-            <span>{{item.name}}</span>
+    <div class="row justify-content-around">
+      <div class="col-auto" v-for="(item, index) in coporators" :key="index">
+        <div class="card">
+          <img class="card-img-top" :src="item.pic" :alt="item.name">
+          <div class="card-body">
+            <h5 class="card-title">{{item.name}}</h5>
+            <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
           </div>
-        </el-card>
-      </el-col>
-    </el-row>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -28,14 +30,11 @@ export default {
 h2 {
   margin-bottom: 30px;
 }
-img {
+.col-auto {
   width: auto;
-  height: auto;
-  max-width: 100%;
-  max-height: 100%;
+  padding-bottom: 20px;
 }
-.name {
-  padding: 14px;
-  text-align: center;
+.card {
+  width: 200px;
 }
 </style>

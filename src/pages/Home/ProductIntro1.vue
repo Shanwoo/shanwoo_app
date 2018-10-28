@@ -1,16 +1,16 @@
 <template>
   <div class="wrap">
     <h2>产品简介</h2>
-    <div class="row">
-      <div class="col-md">
+    <div class="row justify-content-around">
+      <div class="col-auto">
         <div class="advantage"><img src="static/bitcoin.png"/></div>
         <div class="discribe"><p>快速融资</p></div>
       </div>
-      <div class="col-md">
+      <div class="col-auto">
         <div class="advantage"><img src="static/bitcoin.png"/></div>
         <div class="discribe"><p>快速融资</p></div>
       </div>
-      <div class="col-md">
+      <div class="col-auto">
         <div class="advantage"><img src="static/bitcoin.png"/></div>
         <div class="discribe"><p>快速融资</p></div>
       </div>
@@ -28,10 +28,10 @@ export default {
 h2 {
   margin-bottom: 30px;
 }
-.col-md {
-  width: 220px;
-  margin: auto;
+.col-auto {
+  width: auto;
   padding-right: 15px;
+  padding-bottom: 20px;
 }
 .advantage {
   width: 100px;
@@ -41,7 +41,6 @@ h2 {
   vertical-align: middle;
 }
 .discribe {
-  /* width: calc(100% - 120px); */
   padding-left: 20px;
   display: table-cell;
   vertical-align: middle;

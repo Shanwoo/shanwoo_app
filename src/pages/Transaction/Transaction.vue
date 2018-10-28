@@ -16,7 +16,7 @@
       </div>
       <h2 style="margin-top: 20px">转账</h2>
       <div>
-        <p>To: <el-input class="input" type="text" v-model="depositTo" placeholder="请输入对方账户地址"></el-input></p>
+        <p>To: <el-input class="input" type="text" v-model="toAccount" placeholder="请输入对方账户地址"></el-input></p>
         <p>Amount: <el-input class="input" type="text" v-model="transAmount" placeholder="请输入玄武币数量"></el-input></p>
         <el-button size="small" @click="transfer">发送</el-button>
       </div>
@@ -48,6 +48,7 @@ export default {
       txAddress: '',
       showTx: false,
       balance: '',
+      toAccount: '',
       // 转账金额
       transAmount: '',
       depositTo: '',
@@ -89,15 +90,19 @@ export default {
       })
     },
     transfer () {
-      this.$store.state.contractInstance().transfer(this.transAmount, {
-        from: this.$store.state.web3.coinbase
-      }, (err, result) => {
-        if (err) {
-          console.log(err)
-        } else {
-          console.log(result)
-        }
-      })
+      console.log('============')
+      console.log(this.toAccount)
+      console.log(this.transAmount)
+      console.log(this.$store.state.contractInstance())
+      this.$store.state.contractInstance().transfer(this.toAccount, this.transAmount,
+        { from: this.$store.state.web3.coinbase }, (err, result) => {
+          if (err) {
+            console.log(err)
+          } else {
+            console.log('this is the result')
+            console.log(result)
+          }
+        })
     },
     depositShare () {
       this.$store.contractInstance().depositShare(this.depositTo, this.depositNums, this.requireTokens, this.proofHash, this.proofFileUrl

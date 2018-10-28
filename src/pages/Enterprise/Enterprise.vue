@@ -3,25 +3,25 @@
     <head-component></head-component>
     <div class="banner"><img :src='lastetsCoporators[0].pic'></div>
     <div class="wrap news">
-      <el-row :gutter="20">
-        <el-col :span="5">
+      <div class="row">
+        <div class="col-auto">
           <span>上链公司展播</span>
-        </el-col>
-        <el-col :span="4">
+        </div>
+        <div class="col-auto">
           <span>TDJ7384</span>
-        </el-col>
-        <el-col :span="5">
+        </div>
+        <div class="col-auto">
           <span>{{lastetsCoporators[0].name}}</span>
-        </el-col>
-        <el-col :span="5">
+        </div>
+        <div class="col-auto">
           <span>哈希: {{lastetsCoporators[0].hash}}</span>
-      </el-col>
-        <el-col :span="5">
+        </div>
+        <div class="col-auto">
           <span>上链区块: {{lastetsCoporators[0].block}}</span>
-        </el-col>
-      </el-row>
+        </div>
+      </div>
     </div>
-    <product-intro></product-intro>
+    <product-intro-2></product-intro-2>
     <equity-list :equities="partners"></equity-list>
     <div class="wrap">
       <h2>查询股权哈希</h2>
@@ -40,14 +40,14 @@
 <script>
 import { mapState, mapGetters } from 'vuex'
 import HeadComponent from '@/components/HeadComponent'
-import ProductIntro from '@/components/ProductIntro'
+import ProductIntro2 from './ProductIntro2'
 import EquityList from './EquityList'
 import Partner from '@/components/Partner'
 import FootComponent from '@/components/FootComponent'
 
 export default {
   name: 'Enterprise',
-  components: { HeadComponent, ProductIntro, EquityList, Partner, FootComponent },
+  components: { HeadComponent, ProductIntro2, EquityList, Partner, FootComponent },
   data () {
     return {
       equityHash: ''
@@ -74,6 +74,10 @@ img {
   padding-top: 20px;
   padding-bottom: 20px;
   border-bottom: 1px solid #c0c4cc;
+}
+.col-auto {
+  width: auto;
+  padding-bottom: 10px;
 }
 .input {
   width: 50%;

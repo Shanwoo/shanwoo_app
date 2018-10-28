@@ -1,9 +1,16 @@
 <template>
   <div class="wrap">
     <h2>合作伙伴</h2>
-    <div class="content">
-      <div class="partner" v-for="(item, index) in partners" :key="index">
-        <img :src="item.pic"/>
+    <div class="row justify-content-around">
+      <div class="col-auto" v-for="(item, index) in partners" :key="index">
+        <div class="card">
+          <img class="card-img-top" :src="item.pic" :alt="item.name">
+          <!-- <div class="card-body">
+            <h5 class="card-title">{{item.name}}</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div> -->
+        </div>
       </div>
     </div>
   </div>
@@ -26,25 +33,20 @@ export default {
 <style scoped>
 .wrap {
   background: #fff;
-  /* border-top: 1px solid #c0c4cc; */
 }
 h2 {
   margin-bottom: 30px;
 }
-.content {
-  display: inline-block;
-  box-sizing: border-box;
-}
-.partner {
-  width: 23%;
-  float: left;
-  margin: 5px;
-  /* border: 1px solid #929292; */
-}
-img {
+.col-auto {
   width: auto;
-  height: auto;
-  max-width: 100%;
-  max-height: 100%;
+  padding-bottom: 20px;
+}
+.card {
+  width: 200px;
+}
+@media (min-width: 768px) {
+  .col-md {
+    flex-grow: 0;
+  }
 }
 </style>

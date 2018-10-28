@@ -1,38 +1,58 @@
 <template>
   <div class="wrap">
-    <div class="title">
-      <h2>最新股权公示</h2>
-      <span>已有{{amount}}人购买<el-button size="small">
-        <router-link :to="{name:'Transaction'}">去购买</router-link>
-      </el-button></span>
+    <div class="row justify-content-between title">
+      <div class="col-auto">
+        <span><h2>最新股权公示</h2></span>
+      </div>
+      <div class="col-auto">
+        <span>已有{{amount}}人购买
+          <button type="button" class="btn btn-outline-primary btn-sm">
+            <router-link :to="{name:'Transaction'}">去购买</router-link>
+          </button>
+        </span>
+      </div>
     </div>
-    <el-row :gutter="10" v-for="(item, index) in equityList" :key="index">
-      <el-col :span="6">
-        <span><img :src="item.pic"></span>
-      </el-col>
-      <el-col :span="6">
-        <p>{{ item.name }}</p>
-        <p>{{ item.slogan }}</p>
-        <p>{{ item.intro }}</p>
-      </el-col>
-      <el-col :span="3">
-        <p>注册资本</p>
-        <p>出让股份</p>
-        <p>占股</p>
-      </el-col>
-      <el-col :span="4">
-        <p>{{ item.capital }}</p>
-        <p>{{ item.shares }}</p>
-        <p>{{ item.ratio }}</p>
-     </el-col>
-      <el-col :span="5">
-        <p>哈希: {{ item.hash }}</p>
-      </el-col>
-    </el-row>
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <!-- <caption>响应式表格布局</caption> -->
+        <!-- <thead>
+          <tr>
+            <th>时间</th>
+            <th>交易地址</th>
+            <th>购买方</th>
+            <th>售卖方</th>
+            <th>交易金额</th>
+          </tr>
+        </thead> -->
+        <tbody>
+          <tr v-for="(item, index) in equityList" :key="index">
+            <td class="img-tag"><img :src="item.pic"></td>
+            <td>
+              <p>{{ item.name }}</p>
+              <p>{{ item.slogan }}</p>
+              <p>{{ item.intro }}</p>
+            </td>
+            <td>
+              <p>注册资本</p>
+              <p>出让股份</p>
+              <p>占股</p>
+            </td>
+            <td>
+              <p>{{ item.capital }}</p>
+              <p>{{ item.shares }}</p>
+              <p>{{ item.ratio }}</p>
+            </td>
+            <td>
+              <p>哈希: {{ item.hash }}</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
     <div class="getmore" v-if="show">
-      <el-button type="text" @click="getMore">
+      <button type="button" class="btn btn-link getmore" @click="getMore">
         更多<i class="el-icon-caret-bottom"></i>
-      </el-button>
+      </button>
     </div>
   </div>
 </template>
@@ -69,36 +89,22 @@ export default {
   background: #f7fcff;
 }
 .title {
-  width: 100%;
-  display: table;
-  display: table;
   padding: 20px 5px;
-  border-bottom: 1px solid #aaa;
 }
-.title h2 {
-  display: table-cell;
-}
-.title span {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: right;
-}
-.el-button {
+.btn-outline-primary {
   margin-left: 20px;
 }
-.el-row {
-  border-bottom: 1px solid #aaa;
-  padding: 10px 0;
+.btn-outline-primary a:hover {
+  text-decoration: none;
 }
-.el-col img {
-  width: 100%;
+.img-tag {
+  width: 100px;
 }
-a {
+.btn-outline-primary a {
   color: #343434;
 }
 .getmore {
   margin-top: 10px;
-  /* border-bottom: 1px solid #aaa; */
   text-align: center;
 }
 </style>
