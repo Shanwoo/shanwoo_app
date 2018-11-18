@@ -20,7 +20,7 @@ let getWeb3 = new Promise(function (resolve, reject) {
       }
     })
   } else {
-    // web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:7545')) GANACHE FALLBACK
+    web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:7545')) // GANACHE FALLBACK
     reject(new Error('Unable to connect to Metamask'))
   }
 })
@@ -33,7 +33,7 @@ let getWeb3 = new Promise(function (resolve, reject) {
           reject(new Error('Unable to retrieve network ID'))
         } else {
           // Assign the networkId property to our result and resolve promise
-          result = Object.assign({}, result, {networkId})
+          result = Object.assign({}, result, { networkId })
           resolve(result)
         }
       })
