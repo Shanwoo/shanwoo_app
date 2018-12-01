@@ -1,6 +1,6 @@
 <template>
   <div class="wrap">
-    <div class="row">
+    <div class="row" v-if="exchangeRate.USDT">
       <div class="col-auto">
         <span>WOO/USDT ≈ {{exchangeRate["USDT"]["price"]}}</span>
       </div>
@@ -54,7 +54,7 @@
 
 <script>
 export default {
-  name: 'Transaction',
+  name: 'TransactionList',
   props: ['exchangeRate', 'transactions']
 }
 </script>
@@ -66,6 +66,7 @@ export default {
 }
 .col-auto {
   width: auto;
+  max-width: 250px;
   padding-bottom: 10px;
 }
 .table-responsive > .table > tbody > tr > td {

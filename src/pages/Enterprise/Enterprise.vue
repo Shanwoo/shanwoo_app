@@ -25,12 +25,19 @@
     <equity-list :equities="partners"></equity-list>
     <div class="wrap">
       <h2>查询股权哈希</h2>
-      <div>
-        <!-- 输入内容是什么 -->
-        <el-input class="input" type="text" v-model="equityHash" placeholder="请输入..."></el-input>
-        <el-button size="small">查询</el-button>
-        <p></p>
-      </div>
+      <form class="needs-validation">
+        <div class="form-group row">
+          <div class="col-sm-6">
+            <input type="text" class="form-control" id="purchaseShare" v-model="equityHash" placeholder="请输入exchangeId">
+            <div class="invalid-feedback">
+              Please provide a valid account address.
+            </div>
+          </div>
+          <div class="col-sm-2">
+            <button type="button" class="btn btn-primary">查询</button>
+          </div>
+        </div>
+      </form>
     </div>
     <partner></partner>
     <foot-component></foot-component>

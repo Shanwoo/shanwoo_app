@@ -33,14 +33,9 @@
               <p>{{ item.intro }}</p>
             </td>
             <td>
-              <p>注册资本</p>
-              <p>出让股份</p>
-              <p>占股</p>
-            </td>
-            <td>
-              <p>{{ item.capital }}</p>
-              <p>{{ item.shares }}</p>
-              <p>{{ item.ratio }}</p>
+              <p>注册资本:&nbsp; {{ item.capital }}</p>
+              <p>出让股份:&nbsp; {{ item.shares }}</p>
+              <p>占股比例:&nbsp; {{ item.ratio }}</p>
             </td>
             <td>
               <p>哈希: {{ item.hash }}</p>
@@ -51,7 +46,7 @@
     </div>
     <div class="getmore" v-if="show">
       <button type="button" class="btn btn-link getmore" @click="getMore">
-        更多<i class="el-icon-caret-bottom"></i>
+        更多<i class="fas fa-caret-down fa-lg" style="margin-left: 7px;"></i>
       </button>
     </div>
   </div>
@@ -94,17 +89,30 @@ export default {
 .btn-outline-primary {
   margin-left: 20px;
 }
+.btn-outline-primary a {
+  color: #343434;
+}
 .btn-outline-primary a:hover {
   text-decoration: none;
 }
-.img-tag {
-  width: 100px;
+.table td,
+.table th {
+  vertical-align: middle;
 }
-.btn-outline-primary a {
-  color: #343434;
+.img-tag {
+  width: 200px;
+  padding: 0;
+}
+.img-tag img {
+  width: 100%;
 }
 .getmore {
   margin-top: 10px;
   text-align: center;
+}
+@media screen and (max-width: 992px) {
+  .table-responsive > .table > tbody > tr > td {
+    white-space: nowrap;
+  }
 }
 </style>

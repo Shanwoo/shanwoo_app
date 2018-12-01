@@ -3,29 +3,40 @@
     <div class="title">
       <h2>合作股权交易所</h2>
     </div>
-    <el-row :gutter="10" v-for="(item, index) in markets" :key="index">
-      <el-col :span="6">
-        <span><img :src="item.pic"></span>
-      </el-col>
-      <el-col :span="6" style="padding-left: 30px">
-        <p>{{ item.name }}</p>
-        <p>{{ item.board }}</p>
-        <p>{{ item.intro }}</p>
-      </el-col>
-      <el-col :span="4">
-        <p>注册资本</p>
-        <p>挂牌标准</p>
-        <p>挂牌周期</p>
-      </el-col>
-      <el-col :span="5">
-        <p>{{ item.capital }}</p>
-        <p>{{ item.isting_standard }}</p>
-        <p>{{ item.listing_period }}</p>
-     </el-col>
-      <el-col :span="3">
-        <el-button size="small"><a :href="item.domain" target="_blank">去查看</a></el-button>
-      </el-col>
-    </el-row>
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <!-- <caption>响应式表格布局</caption> -->
+        <!-- <thead>
+          <tr>
+            <th>时间</th>
+            <th>交易地址</th>
+            <th>购买方</th>
+            <th>售卖方</th>
+            <th>交易金额</th>
+          </tr>
+        </thead> -->
+        <tbody>
+          <tr v-for="(item, index) in markets" :key="index">
+            <td class="img-tag"><img :src="item.pic"></td>
+            <td>
+              <p>{{ item.name }}</p>
+              <p>{{ item.board }}</p>
+              <p>{{ item.intro }}</p>
+            </td>
+            <td>
+              <p>注册资本:&nbsp; {{ item.capital }}</p>
+              <p>挂牌标准:&nbsp; {{ item.listing_standard }}</p>
+              <p>挂牌周期:&nbsp; {{ item.listing_period }}</p>
+            </td>
+            <td>
+              <button type="button" class="btn btn-outline-primary btn-sm">
+                <a :href="item.domain" target="_blank">去查看</a>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </template>
 
@@ -60,14 +71,27 @@ export default {
   vertical-align: middle;
   text-align: right;
 }
-.el-button {
-  margin-left: 20px;
+.table td,
+.table th {
+  vertical-align: middle;
 }
-.el-row {
-  border-bottom: 1px solid #aaa;
-  padding: 10px 0;
+.img-tag {
+  width: 200px;
+  padding: 0;
 }
-.el-col img {
+.img-tag img {
   width: 100%;
+}
+.btn-outline-primary a {
+  color: #343434;
+  font-size: 15px;
+}
+.btn-outline-primary a:hover {
+  text-decoration: none;
+}
+@media screen and (max-width: 992px) {
+  .table-responsive > .table > tbody > tr > td {
+    white-space: nowrap;
+  }
 }
 </style>

@@ -14,16 +14,6 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.min.js'
 axios.defaults.baseURL = process.env.BASE_URL
 Vue.use(ElementUI)
-// Vue.use(Menu)
-// Vue.use(Submenu)
-// Vue.use(MenuItem)
-// Vue.use(Container)
-// Vue.use(Aside)
-// Vue.use(Main)
-// Vue.use(Carousel)
-// Vue.use(CarouselItem)
-// Vue.use(Button)
-// Vue.use(Select)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

@@ -7,13 +7,16 @@
       <h2 class="title" style="margin-bottom: 15px">账户余额查询</h2>
       <form class="needs-validation">
         <div class="form-group row">
-          <div class="col-sm-6">
-            <input type="text" class="form-control" id="balanceQuery" v-model="accountAddress" placeholder="请输入账户地址">
+          <div class="col-sm-10">
+            <p></p>
+            <!-- <input type="text" class="form-control" id="balanceQuery" v-model="accountAddress" placeholder="请输入账户地址">
             <div class="invalid-feedback">
               Please provide a valid account address.
-            </div>
+            </div> -->
           </div>
-          <div class="col-sm-2">
+        </div>
+        <div class="form-group row">
+          <div class="col-sm-10">
             <button type="button" class="btn btn-primary" @click="scanAddress">查询</button>
           </div>
         </div>
@@ -180,9 +183,9 @@
       </form>
       <div v-if="showDepositInfo">
         <p style="margin-bottom: 10px">股权上链信息: {{depositInformation}}</p>
-        <a :href='"https://etherscan.io/tx/" + depositInformation' target="_blank" style="color: #a9a9a9;">
+        <!-- <a :href='"https://etherscan.io/tx/" + depositInformation' target="_blank" style="color: #a9a9a9;">
           >>点击查看更多股权上链信息
-        </a>
+        </a> -->
       </div>
     </div>
     <partner></partner>
@@ -260,7 +263,8 @@ export default {
       })
     },
     transfer () {
-      this.$store.state.contractInstance().transfer(this.toAccount, this.transAmount,
+      let wooAmount = this.transAmount * 1e+18
+      this.$store.state.contractInstance().transfer(this.toAccount, wooAmount,
         { from: this.$store.state.web3.coinbase }, (err, result) => {
           if (err) {
             console.log(err)
@@ -314,6 +318,7 @@ export default {
           } else {
             console.log(this.exchangeId2)
             console.log(result)
+            this.showDepositInfo = true
             this.depositInformation = result
           }
         })
